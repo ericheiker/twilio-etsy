@@ -48,7 +48,7 @@ app.get('/battlecat', function(req, res) {
   var options = {
   	host: 'openapi.etsy.com',
   	port: '443',
-  	path: '/v2/listings/175112598?api_key=ajqa1iqt78qgh21kllan0ti5',
+  	path: '/v2/listings/175112598?api_key=ajqa1iqt78qgh21kllan0ti5&includes=MainImage',
   	method: 'GET'
   };
 
@@ -68,7 +68,13 @@ app.get('/battlecat', function(req, res) {
   	etsyRes.on('end', function() {
   		var listingResponse = JSON.parse(body);
   		console.log("Got response ", listingResponse.results[0].description);
-  		res.render('battlecat', {"description" : listingResponse.results[0].description})
+  		var listing = listingResponse.results[0]
+  		res.render('battlecat', {
+  			"title" : listing.title
+  			, "description" : listing.description
+  			, "url" : listing.url
+  			, "price" : listing.price + listing.currency_code
+  			, "mainImage" : listing.MainImage.url_570xN })
   	});
   });
 
@@ -87,8 +93,12 @@ app.post('/echo', function(req, res) {
 });
 
 app.post('/sendSMS', function(req, res) {
-	
-	 
+	sendSMS(req);
+
+	res.redirect('battlecat');
+});
+
+function sendSMS(req) {
 	twilioClient.sms.messages.create({
 	    body: req.body.message,
 	    to: "+14085151441",
@@ -100,9 +110,7 @@ app.post('/sendSMS', function(req, res) {
 	      console.log("message " + message); 
 	    }
 	});
-
-	res.render('hello', { message: "I Posted something!"});
-});
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

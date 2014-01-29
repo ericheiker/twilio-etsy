@@ -9,7 +9,17 @@
     <title>Battlecat</title>
   </head>
   <body>
-    <h1>Battlecat</h1>
-    <p><%= description %></p>
+    <h1><%= title %></h1>
+    <div class="row">
+    	<div class="col-md-8"><img src="<%=mainImage%>"/></div>
+	    <div class="col-md-4"><p><%= description %></p></div>
+	</div>
+    <p>For a low low of <%= price %></p>
+    <p><a href=<%=url%>>Find out more about this item!</a></p>
+    <p>Want to know more about this item? Contact the seller:</p>
+    <form method="post" action="/sendSms">
+    	<input name="message"></input>
+    	<input class="button" type="submit" value="Send SMS"></input>
+    </form>
   </body>
 </html>
