@@ -96,8 +96,8 @@ app.post('/sendSMS', function(req, res) {
 function sendSMS(req) {
 	twilioClient.sms.messages.create({
 	    body: req.body.message,
-	    to: "+14085151441",
-	    from: "+14089229803"
+	    to: process.env.SELLER_NUMBER,
+	    from: process.env.TWILIO_NUMBER
 	}, function(err, message) {
 	    if (err) {
 	      console.log("error " + err);
