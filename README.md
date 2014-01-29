@@ -14,3 +14,10 @@ sellers could allow or disallow communication methods (SMS, voicemail, etc). The
 * DigitalCloud - to host the app
 * Twilio API - cloud communications to send SMS through the web
 * Etsy API - DIY marketplace
+
+
+## Next Steps
+
+* See if can use TwiML to capture the response from the seller and redirect to the buyer's phone
+* Set up Nginx as a reverse proxy
+* Set up memcached to cache listing page (doesn't really change)
