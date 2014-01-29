@@ -1,7 +1,7 @@
 # Twilio-Etsy
 
-The idea behind this app is to allow Etsy users to send messages to the seller. Since there is no access to the seller's phone number,
-this is purely a conceptual app.
+The idea behind this app is to allow Etsy users to send messages to a seller, without needing to know their phone number. In future versions,
+sellers could allow or disallow communication methods (SMS, voicemail, etc). The seller could respond through Twilio.
 
 ## Technologies used in this app
 
