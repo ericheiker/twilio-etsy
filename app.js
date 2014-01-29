@@ -1,18 +1,20 @@
 
 /**
- * Module dependencies.
+ * Need to set the following environment variables before this will run:
+ * TWILIO_SID
+ * TWILIO_AUTH
+ * ETSY_AUTH
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , http = require('http')
   , https = require('https')
   , path = require('path');
 
 var app = express();
 
-var accountSid = 'ACbb35fa5283bd768e8a17cb8cd3173179';
-var authToken = "b3989bca327bad43c8e7dbba20bd1c51";
+var accountSid = process.env.TWILIO_SID;
+var authToken = process.env.TWILIO_AUTH;
 var twilioClient = require('twilio')(accountSid, authToken);
 
 // all environments
@@ -31,24 +33,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/hello', function(req, res) {
-  res.render('hello', { message: 'Congrats, you just set up your app!' });
-});
-
-app.post('/hello', function(req, res) {
-  res.render('hello', { message: req.body.message });
-});
-
 app.get('/', function(req, res) {
-  res.render('hello', { message: 'Congrats, you just set up your app!', name: "Eric" });
+  
 });
 
 app.get('/battlecat', function(req, res) {
-
+  var etsyAuth = process.env.ETSY_AUTH;
+  console.log(etsyAuth);
   var options = {
   	host: 'openapi.etsy.com',
   	port: '443',
-  	path: '/v2/listings/175112598?api_key=ajqa1iqt78qgh21kllan0ti5&includes=MainImage',
+  	path: '/v2/listings/175112598?api_key=' + etsyAuth + '&includes=MainImage',
   	method: 'GET'
   };
 
