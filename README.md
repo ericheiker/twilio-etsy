@@ -1,8 +1,15 @@
-# Twilio-Etsy
+# Twilio-Etsy. Codename: Battle Cat
 
 The idea behind this app is to allow Etsy users to send messages to a seller, without needing to know their phone number. In future versions sellers could allow or disallow communication methods (SMS, voicemail, etc). The seller could respond through Twilio.
 
 Currently this project serves as a way to familiarize myself with the Express.js framework and the Twilio API.
+
+## Features
+* User can browse Etsy listings
+* User can view individual Etsy listings
+* User can send an SMS to a seller
+* Seller can reply to an SMS and the user will receive it
+* Seller can configure which communication options they allow (SMS, voicemails, call trees)
 
 ## Technologies used in this app
 
