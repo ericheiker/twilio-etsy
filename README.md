@@ -4,7 +4,7 @@ The idea behind this app is to allow Etsy users to send messages to a seller, wi
 
 Currently this project serves as a way to familiarize myself with the Express.js framework and the Twilio API.
 
-## Features
+## Upcoming Features
 * User can browse Etsy listings
 * User can view individual Etsy listings
 * User can send an SMS to a seller
