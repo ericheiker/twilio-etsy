@@ -2,7 +2,7 @@
 
 The idea behind this app is to allow Etsy users to send messages to a seller, without needing to know their phone number. In future versions sellers could allow or disallow communication methods (SMS, voicemail, etc). The seller could respond through Twilio.
 
-Currently this project serves as a way to familiarize myself with the Express.js framework and the Twilio API. My goal is to have the application follow good engineering practices even though it is small; scalability, unit testing, load testing, distributed caching, modular code, no single points of failure etc.
+Currently this project serves as a way to familiarize myself with the Express.js framework and the Twilio API.
 
 ## Technologies used in this app
 
