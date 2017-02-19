@@ -26,7 +26,7 @@ Currently this project serves as a way to familiarize myself with the Express.js
 
 ## Next Steps
 
-* Before going any further, look into unit testing framework. Mocha looks promising http://visionmedia.github.io/mocha/
+* Before going any further, look into unit testing framework. Mocha looks promising http://mochajs.org/
 * Change routes to be more RESTful (e.g. GET /listing, POST /message etc). Too RPC-like at the moment
 * Set up Nginx as a reverse proxy
 * Set up memcached to cache listing data (doesn't really change). Can also look into caching the more static sections of the page with another solution
